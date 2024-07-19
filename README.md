@@ -23,7 +23,8 @@ For MacOS and Windows we recommend to install Docker Desktop ([MacOs](https://do
 
 After you have installed Docker, make sure that Docker is running by running: `docker --version`, which should indicate a version that is `>= 26.0.0` and the corresponding build, i.e. `Docker version 26.0.0, build 2ae903e`
 
-You should then run `docker info` which returns some information in the case docker is running. 
+You should then run `docker info` which returns some information in the case docker is running.
+If the output indicates that the Docker Daemon is not running, makes sure to start the Docker Engine or to have Docker Desktop open.
 
 
 #### Git
@@ -36,6 +37,39 @@ Check your installation by running `git --version` which should return a version
 
 See [GitHub's website](https://cli.github.com/).
 Check your installation by running `gh --version` which should return a version number `>= 2.52.0`.
+
+
+### Obtaining the Image
+
+STTK Research Tools are a set of modules for (mostly) quantitative research. The researcher should be able to call those modules and their functions from within a Jupyter Notebook to conduct his/her research and then export the research output to his/her local machine.
+
+To ensure replicability, all the necessary modules and their functions are contained within a Docker image. This image can be obtained either by:
+- pulling it from the Docker Hub, or
+- building it locally on the basis of the STTK source code that is hosted on this GitHub repository.
+
+
+#### Pulling the image from the Docker Hub
+
+To pull the image from the Docker Hub, run:
+```
+docker pull nilskujath/sttk:<version>
+```
+
+#### Building image locally on the basis of the STTK source code
+
+If you do not have a local copy of the STTK repository, run:
+```
+git clone https://github.com/NilsKujath/sttk.git
+```
+Then run `cd sttk` to get into the project file and run:
+```
+docker build -t nilskujath/sttk:<version> .
+```
+
+
+
+<!--## Extending STTK Research Tools -->
+
 
 
 
