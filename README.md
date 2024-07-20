@@ -41,9 +41,7 @@ Check your installation by running `gh --version` which should return a version 
 
 ### Obtaining the Image
 
-STTK Research Tools are a set of modules for (mostly) quantitative research. The researcher should be able to call those modules and their functions from within a Jupyter Notebook to conduct his/her research and then export the research output to his/her local machine.
-
-To ensure replicability, all the necessary modules and their functions are contained within a Docker image. This image can be obtained either by:
+All necessary modules and their functions are contained within a Docker image. This image can be obtained either by:
 - pulling it from the Docker Hub, or
 - building it locally on the basis of the STTK source code that is hosted on this GitHub repository.
 
@@ -54,6 +52,7 @@ To pull the image from the Docker Hub, run:
 ```
 docker pull nilskujath/sttk:<version>
 ```
+Check by running `docker images`. An image named `nilskujath/sttk:<version>` should be listed, alongside any other images you might or might not have. 
 
 #### Building image locally on the basis of the STTK source code
 
@@ -65,8 +64,29 @@ Then run `cd sttk` to get into the project file and run:
 ```
 docker build -t nilskujath/sttk:<version> .
 ```
+After the build finished, check by running `docker images`. An image named `nilskujath/sttk:<version>` should be listed, alongside any other images you might or might not have.
 
 
+### Running the container and accessing a Jupyter Notebook from the browser
+
+To run a docker container based on this image, run:
+```
+docker run -it \
+  -p 8080:8080 \
+  --name <container_name> \
+  nilskujath/sttk:<version>
+```
+where `<container_name>` should be replaced by the desired container name, for example: `jupyter_container_11`, and `<version>` should be replaced by the desired version of the image, for example `nilskujath/sttk:0.1.0`.
+
+Once inside the container, run:
+```
+jupyter notebook --ip=0.0.0.0 --port=8080 --allow-root
+```
+
+After exiting the container via typing `exit` in the container's command line, the container can now be fund in the list of containers that also includes those containers that are currently not running (accessible via `docker ps -a`). To start this container again, run:
+```
+docker start -ia <container_id OR container_name>
+```
 
 <!--## Extending STTK Research Tools -->
 
