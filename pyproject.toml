@@ -12,6 +12,14 @@ pandas = "^2.2.2"
 matplotlib = "^3.9.1"
 notebook = "^7.2.1"
 
+[tool.poetry.group.dev.dependencies]
+black = {extras = ["jupyter"], version = "^24.4.2"}
+flake8 = "^7.1.0"
+pre-commit = "^3.7.1"
+nbqa = "^1.8.5"
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "*"
 
 [build-system]
 requires = ["poetry-core"]
