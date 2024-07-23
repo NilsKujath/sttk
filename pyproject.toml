@@ -18,8 +18,9 @@ flake8 = "^7.1.0"
 pre-commit = "^3.7.1"
 nbqa = "^1.8.5"
 
+
 [tool.poetry.group.docs.dependencies]
-mkdocs = "*"
+mkdocs-material = "^9.5.30"
 
 [build-system]
 requires = ["poetry-core"]
