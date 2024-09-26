@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "sttk"
+version = "0.1.0"
+description = ""
+authors = ["Nils P. Kujath <63961429+NilsKujath@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+mkdocs-material = "^9.5.38"
+pandas = "^2.2.3"
+numpy = "^2.1.1"
+yfinance = "^0.2.43"
+matplotlib = "^3.9.2"
+notebook = "^7.2.2"
+mkdocs-glightbox = "^0.4.0"
+
+[tool.poetry.group.dev.dependencies]
+black = {extras = ["jupyter"], version = "^24.4.2"}
+twine = "^5.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

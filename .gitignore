@@ -1,0 +1,23 @@
+# Ignore JetBrains IDE specific project files
+.idea/
+
+# Ignore data directories and files used in the project
+sttk-data/
+**/sttk_data/
+
+# Ignore build and distribution directories and files
+dist/
+
+# Ignore macOS-specific system files
+.DS_Store
+**/.DS_Store
+
+# Ignore Python bytecode files and cache directories
+**/__pycache__/
+*.py[cod]
+
+# Ignore Jupyter notebook checkpoints
+**/.ipynb_checkpoints/
+
+# Ignore MkDocs site/ build directory
+site/
