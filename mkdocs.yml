@@ -4,12 +4,11 @@ copyright: Copyright &copy; 2024-2024 Nils Kujath
 extra:
   generator: false
 nav:
-  - Getting Started:
-    - Quickstart Guide: index.md
-  - Architecture:
-    - Core Idea and MWE: architecture/intro-eventdriven.md
+  - Home:
+    - Welcome!: index.md
   - Documentation:
-    - Introduction: documentation/documentation.md
+    - Introduction: documentation/intro_backbone.md
+    - Ontology of Event Types: documentation/ontology-of-event-types.md
 theme:
   icon:
     logo: octicons/code-16
@@ -32,7 +31,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
+#    - navigation.sections
     - content.code.copy
     - content.code.select
     - content.code.annotate

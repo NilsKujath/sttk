@@ -6,5 +6,5 @@ The Systematic Trading Toolkit (STTK) is a set of open source modules that suppo
 
 ## Documentation
 
-Read the documentation at [sttk.org](sttk.org).
+Read the documentation at [www.sttk.org](https://www.sttk.org).
 
