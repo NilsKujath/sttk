@@ -20,7 +20,7 @@
     
     
       
-        <title>Core Idea and MWE - Systematic Trading Toolkit (STTK)</title>
+        <title>Core Idea - Systematic Trading Toolkit (STTK)</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#core-idea-and-mwe" class="md-skip">
+        <a href="#core-idea" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Core Idea and MWE
+              Core Idea
             
           </span>
         </div>
@@ -451,15 +451,63 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Core Idea
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Core Idea and MWE
+    Core Idea
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-event-driven-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Event-driven Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-classes-and-a-sample-implementation-of-a-tickevent-subclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Classes and a Sample Implementation of a TickEvent Subclass
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -561,6 +609,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-event-driven-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Event-driven Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-classes-and-a-sample-implementation-of-a-tickevent-subclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Classes and a Sample Implementation of a TickEvent Subclass
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -577,7 +651,24 @@
   
 
 
-<h1 id="core-idea-and-mwe">Core Idea and MWE</h1>
+<h1 id="core-idea">Core Idea</h1>
+<h2 id="introduction-to-event-driven-architecture">Introduction to Event-driven Architecture</h2>
+<p>Event-Driven Architecture (EDA) is a design paradigm in which system components asynchronously respond to significant occurrences, termed events.
+An event represents a notable change in the internal state of a system or an external stimulus.
+In EDA, components are designed to monitor these events and execute appropriate actions in response.
+Within trading systems, examples of such events include (system external) <em>market events</em>, such as a newly received price tick from an API, or (system internal) <em>signal events</em>, such as the generation of a buy or sell signal based on a certain price-related conditions.
+Importantly, responses to events may themselves trigger new events, forming a dynamic, reactive system.</p>
+<p>An event-driven system typically consists of three core components: event emitters, event consumers, and an event channel.
+Event emitters (also called producers) generate events. These changes are encapsulated in event messages, which are data packets describing the event type and associated information.
+Event consumers (also called sinks) process these event messages, executing tasks such as sending orders to a broker or updating a database.
+The event channel (or queue) is essential because it mediates this flow of messages asynchronously, ensuring producers and consumers remain decoupled.
+Asynchrony here refers to the fact that event emitters do not have to wait for consumers to process their events before generating new ones.
+Instead, event messages are placed in a queue, where consumers retrieve and process them independently.</p>
+<p>In an event-driven architecture, the decoupling of event producers and consumers enhances both scalability and maintainability in trading systems.
+By separating these components, the system gains the flexibility to introduce new modules—such as additional market data feeds or trading algorithms—without disrupting existing workflows.
+This modularity also improves maintainability: individual components can be updated, replaced, or scaled independently of one another.
+As a result, the architecture remains adaptable to evolving requirements and is resilient to change, minimizing the need for large-scale system overhauls or disruptions.</p>
+<h2 id="event-classes-and-a-sample-implementation-of-a-tickevent-subclass">Event Classes and a Sample Implementation of a <code>TickEvent</code> Subclass</h2>
 
 
 
